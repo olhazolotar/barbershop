@@ -70,6 +70,7 @@ body {
   margin-right: auto;
   outline: 1px solid red;
 }
+
 .section {
   padding-top: 130px;
   padding-bottom: 130px;
@@ -104,6 +105,12 @@ body {
   text-transform: uppercase;
 
   color: var(--btn-color-secondary);
+
+  border: 1px solid var(--accent-color);
+  border-radius: 25px;
+  background-color: transparent;
+  min-width: 160px;
+  height: 40px;
 }
 .secondary-btn:hover,
 .secondary-btn:focus {
@@ -173,14 +180,33 @@ body {
   margin-left: 60px;
 }
 /* ---------------------------------- HERO ------------------------ */
-.hero {
-  background-color: grey;
-}
+
 .hero-container {
   display: flex;
 }
+
 .hero-items {
+  display: flex;
+  align-items: center;
+
   width: 93px;
+  transform: rotate(-90deg);
+}
+
+.hero-items::before {
+  content: '';
+  display: inline-block;
+  flex-shrink: 0;
+
+  width: 60px;
+  height: 1px;
+  background-color: var(--btn-color-secondary);
+
+  margin-right: 40px;
+}
+
+.hero-item:not(:last-child) {
+  margin-right: 40px;
 }
 
 .hero-link {
@@ -191,18 +217,29 @@ body {
 
   color: var(--primary-text-color);
 }
+
 .hero-link:hover,
 .hero-link:focus {
   color: var(--accent-color);
 }
+
 .hero-right-wrap {
-  background-color: violet;
+  background-image: linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2)), url(../img/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: grey;
+
   flex-grow: 1;
   padding-top: 272px;
   padding-bottom: 206px;
   padding-left: 96px;
 }
-.hero-before-title {
+
+.before-title {
+  display: flex;
+  align-items: center;
+
   font-weight: 600;
   font-size: 11px;
   line-height: calc(15 / 11);
@@ -212,6 +249,23 @@ body {
   color: rgba(157, 164, 189, 0.6);
 
   margin-bottom: 20px;
+}
+
+.pre-title::before {
+  content: '';
+  display: inline-block;
+
+  width: 60px;
+  height: 1px;
+
+  margin-right: 20px;
+}
+
+.pre-title-light {
+  color: var(--before-title-color);
+}
+.pre-title-light::before {
+  background-color: var(--before-title-color);
 }
 
 .hero-title {
@@ -224,6 +278,7 @@ body {
 
   margin-bottom: 20px;
 }
+
 .hero-after-title {
   font-size: 18px;
   line-height: calc(30 / 18);
@@ -236,17 +291,36 @@ body {
   padding-top: 139px;
   padding-bottom: 121px;
 }
-.about-before-title {
+
+.about-items {
+  display: flex;
+  margin-right: 64px;
+}
+
+.about-wrap {
+  display: flex;
+}
+
+.before-title {
+  display: flex;
+  align-items: center;
+
   font-weight: 600;
   font-size: 11px;
   line-height: calc(15 / 11);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 
-  color: var(--primary-text-color);
-
   margin-bottom: 20px;
 }
+.pre-title-dark {
+  color: var(--primary-text-color);
+}
+
+.pre-title-dark::before {
+  background-color: var(--primary-text-color);
+}
+
 .title {
   font-family: 'Raleway', sans-serif;
   font-size: 42px;
@@ -265,13 +339,17 @@ body {
 
   margin-bottom: 20px;
 }
+
 .about-text {
   margin-bottom: 40px;
 }
 
 /* ---------------------------------- PRICE ------------------------ */
 .price {
-  background-color: grey;
+  background-color: #111319;
+  background-image: url(../img/price-bg.png);
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .price-before-title {
@@ -298,6 +376,56 @@ body {
   letter-spacing: 0.02em;
 
   color: var(--before-title-color);
+}
+
+.price-list-wrap {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-bottom: 50px;
+}
+
+.price-items {
+  width: 50%;
+  padding: 30px 40px;
+}
+
+.price-items:nth-child(odd) {
+  background: linear-gradient(180deg, #171a24 0%, rgba(23, 26, 36, 0.2) 100%);
+}
+
+.price-items:nth-child(even) {
+  background: linear-gradient(180deg, #090b13 0%, rgba(9, 11, 19, 0.2) 100%);
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.price-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.price-item::before {
+  content: '';
+
+  border-bottom: 1px solid rgba(157, 164, 189, 0.12);
+  margin-right: 6px;
+  margin-left: 6px;
+
+  flex-grow: 1;
+}
+
+.price-text:first-child {
+  order: -1;
+}
+
+.btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ---------------------------------- REASONS ------------------------ */
@@ -382,6 +510,22 @@ body {
   text-align: center;
   line-height: calc(19 / 14);
   color: var(--accent-color);
+}
+.masters-socials-items {
+  display: flex;
+  justify-content: center;
+}
+
+.masters-socials-link {
+  width: 44px;
+  height: 44px;
+  background-color: tomato;
+  border-radius: 50%;
+
+  display: block;
+}
+.masters-socials-item + .masters-socials-item {
+  margin-left: 10px;
 }
 
 /* ---------------------------------- GALLERY ------------------------ */
