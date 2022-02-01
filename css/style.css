@@ -288,8 +288,9 @@ body {
 }
 /* ---------------------------------- ABOUT ------------------------ */
 .about {
-  padding-top: 139px;
-  padding-bottom: 121px;
+  /* padding-top: 139px;
+  padding-bottom: 121px; */
+  background-color: wheat;
 }
 
 .about-items {
@@ -464,6 +465,10 @@ body {
 }
 
 /* ---------------------------------- MASTERS ------------------------ */
+.masters {
+  /* background-color: yellowgreen; */
+}
+
 .masters-before-title {
   font-weight: 600;
   font-size: 11px;
@@ -510,22 +515,38 @@ body {
   text-align: center;
   line-height: calc(19 / 14);
   color: var(--accent-color);
+
+  margin-bottom: 30px;
 }
+
 .masters-socials-items {
   display: flex;
   justify-content: center;
 }
 
+.masters-socials-item:not(:last-child) {
+  margin-right: 10px;
+}
+
 .masters-socials-link {
   width: 44px;
   height: 44px;
-  background-color: tomato;
+  background-color: var(--backgraund-color-white);
+  color: var(--primary-text-color);
   border-radius: 50%;
 
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.masters-socials-item + .masters-socials-item {
-  margin-left: 10px;
+
+.masters-socials-icon {
+  fill: currentColor;
+}
+
+.masters-socials-link:hover,
+.masters-socials-link:focus {
+  color: var(--accent-color);
 }
 
 /* ---------------------------------- GALLERY ------------------------ */
