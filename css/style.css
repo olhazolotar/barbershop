@@ -68,7 +68,6 @@ body {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-  outline: 1px solid red;
 }
 
 .section {
@@ -315,9 +314,6 @@ body {
   color: #9da4bd;
 }
 /* ---------------------------------- ABOUT ------------------------ */
-.about {
-  background-color: wheat;
-}
 
 .about-items {
   display: flex;
@@ -461,6 +457,45 @@ body {
 }
 
 /* ---------------------------------- REASONS ------------------------ */
+.reasons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reasons-left-wrap,
+.reasons-right-wrap {
+  width: calc((100% - 30px) / 2);
+}
+
+.reasons-left-wrap {
+  display: flex;
+  justify-content: center;
+}
+.reasons-items {
+  display: flex;
+  flex-wrap: wrap;
+  width: 370px;
+}
+
+.reasons-item {
+  width: 170px;
+  height: 133px;
+  background-color: #f7f7f7;
+  padding: 20px 24px;
+}
+
+.reasons-item:nth-child(odd) {
+  margin-right: 30px;
+}
+
+.reasons-item:nth-child(even) {
+  margin-top: 30px;
+}
+
+.reasons-item-dif {
+  padding: 20px;
+}
+
 .reasons-count {
   font-weight: 700;
   font-size: 42px;
@@ -468,7 +503,10 @@ body {
   text-align: center;
   letter-spacing: 0.05em;
   display: block;
+  text-align: center;
+  margin-bottom: 6px;
 }
+
 .reasons-item-text {
   font-weight: 600;
   font-size: 11px;
@@ -477,6 +515,7 @@ body {
 
   color: var(--primary-text-color);
 }
+
 .reasons-before-title {
   font-weight: 600;
   font-size: 11px;
@@ -489,6 +528,7 @@ body {
   margin-bottom: 20px;
 }
 .reasons-title {
+  color: var(--primary-text-color);
   margin-bottom: 20px;
 }
 .reasons-after-title {
@@ -496,9 +536,6 @@ body {
 }
 
 /* ---------------------------------- MASTERS ------------------------ */
-.masters {
-  background-color: yellowgreen;
-}
 
 .masters-before-title {
   font-weight: 600;
@@ -514,6 +551,7 @@ body {
 
 .masters-title {
   margin-bottom: 44px;
+  color: var(--primary-text-color);
 }
 .masters-items {
   display: flex;
@@ -569,6 +607,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: color 250ms linear;
 }
 
 .masters-socials-icon {
