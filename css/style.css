@@ -316,14 +316,17 @@ body {
 }
 /* ---------------------------------- ABOUT ------------------------ */
 .about {
-  /* padding-top: 139px;
-  padding-bottom: 121px; */
   background-color: wheat;
 }
 
 .about-items {
   display: flex;
+  flex-shrink: 0;
   margin-right: 64px;
+}
+
+.about-item:not(:last-child) {
+  margin-right: 30px;
 }
 
 .about-wrap {
